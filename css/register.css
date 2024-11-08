@@ -1,0 +1,64 @@
+*{margin: 0; padding: 0; box-sizing: border-box; border-radius: 0;background: #fff;}
+.container {
+    width: 100%; max-width: 400px;
+    margin: 8px auto 0;
+}
+nav {
+    margin-bottom: 8px;
+}
+a {
+    text-decoration: none;
+    font-size: 24px;
+    color: #555;
+}
+table {
+    border-collapse: collapse;
+}
+th {
+    font-size: 14px;
+    font-weight: normal;
+}
+td,th {
+    border: 1px solid #333;
+    text-align: center;
+}
+th:nth-of-type(2),th:nth-of-type(3),
+td:nth-of-type(2),td:nth-of-type(3) {
+    width: 30%;
+}
+input[type="text"] {
+    font-size: 16px;
+    text-align: center;
+    height: 24px; line-height: 24px;
+    width: 100%;
+    border: none;
+}
+tbody tr:nth-of-type(1) input[name="ratio[]"] {
+    color: red;
+}
+input[name="edit"] {
+    margin: 8px 0 32px;
+    padding: 3px 0;
+    border: 1px solid #333;
+    width: 100%;
+}
+
+.all_clear_div {
+    display: inline-block;
+    margin: 8px 0 8px;
+    border: 1px solid red;
+    padding: 0 3px;
+    cursor: pointer;
+}
+.delete_form {
+    position: relative;
+    border: 1px solid #333;
+    margin-bottom: 8px;
+}
+input[name="delete_btn"] {
+    position: absolute;
+    top: 2px; right: 2px;
+    border: 1px solid red;
+    padding: 0 3px;
+    cursor: pointer;
+}

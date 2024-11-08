@@ -1,0 +1,110 @@
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+body {
+    width: 100%; max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+header {
+    color: #eee;
+    margin-bottom: 8px;
+    padding: 8px 0;
+    text-shadow: 1px 1px 1px rgba(0,0,0,1);
+    background-image: linear-gradient(-45deg, #444 0%, #222 20%, #555 34%, white 53%, #444 100%);
+}
+h1 {
+    font-family: serif;
+    letter-spacing: 4px;
+    font-size: 28px;
+    margin-bottom: 16px;
+}
+header a {
+    color: white;
+    text-decoration: none;
+}
+.err_success_div {
+    text-align: left;
+    color: #4285f4;
+}
+
+.insert_form { /* インサートのフォーム送信 */
+    border: 1.5px solid #333;
+    margin-bottom: 8px;
+    padding: 4px;
+}
+.insert_btns { /* 名前 削除キー 登録bnt */
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 0 5px;
+    border-radius: 3px;
+    border: 1px solid #333;
+    height: 28px; line-height: 28px;
+    font-size: 18px;
+}
+button.insert_btns {
+    margin-bottom: 16px;
+    font-size: 20px;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    letter-spacing: 4px;
+    text-shadow: 1.5px 1.5px 1px rgba(0,0,0,1);
+    box-shadow: 0px 3px 3px rgba(0,0,0,.6);
+    background-image: linear-gradient(-45deg, #444 0%, #222 20%, #555 34%, white 53%, #444 100%);
+}
+.description {
+    font-family: 'Inconsolata', monospace;
+    color: gray;
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+label { /* 高校名リスト */
+    font-family: 'Inconsolata', monospace;
+    letter-spacing: 3.6px;
+    font-size: 18px;
+}
+
+/* セクション */
+section {
+    border: 1.5px solid #333;
+    margin-bottom: 8px;
+    padding: 4px;
+    font-size: 18px;
+}
+section div:first-of-type {
+    position: relative;
+}
+.rank {
+    position: absolute; left: 0;
+}
+.sum {
+    position: absolute; right: 0;
+}
+.created {
+    font-size: 14px;
+}
+section div:nth-of-type(3) span {
+    display: inline-block;
+    width: 48%;
+}
+.lose {  /* 打消し線 */
+    text-decoration: line-through;
+    opacity: .5;
+}
+/* 削除処理 */
+.delete_form {
+    position: relative;
+}
+.delete_btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 22px;
+    color: #777;
+    cursor: pointer;
+}
+.start {
+    display: none;
+}
