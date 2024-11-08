@@ -30,8 +30,8 @@ if($_SERVER["REQUEST_METHOD"]==="POST") {
     // 名前の入力があるかを検証
     if(!$_SESSION['hdn']) {
         $_SESSION['err'][] = '名前を入力して下さい';
-    } elseif($sqls->inspection_8()) {
-        $_SESSION['err'][] = 'その8校はすでに登録済みです';
+    } else {
+        if($sqls->inspection_name()) $_SESSION['err'][] = 'その名前はすでに登録済みです';
     }
 
     // 削除キーが半角英数で渡ってきたかを検証
@@ -43,8 +43,8 @@ if($_SERVER["REQUEST_METHOD"]==="POST") {
     $_SESSION['school'] = filter_input(INPUT_POST, 'school', FILTER_DEFAULT,FILTER_REQUIRE_ARRAY);
     if (!isset($_SESSION['school']) || count($_SESSION['school']) !== 8) {
         $_SESSION['err'][] = '８校選んで check を入れて下さい';
-    } else {
-        if($sqls->inspection_8()) $_SESSION['err'][] = 'その8校はすでに登録済みです';
+    } elseif($sqls->inspection_8()) {
+        $_SESSION['err'][] = 'その8校はすでに登録済みです';
     }
 
     // バリデーションのエラーが０だったら
