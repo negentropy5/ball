@@ -30,19 +30,19 @@ if($_SERVER["REQUEST_METHOD"]==="POST") {
     // 名前の入力があるかを検証
     if(!$_SESSION['hdn']) {
         $_SESSION['err'][] = '名前を入力して下さい';
-    } else {
-        if($sqls->inspection_name()) $_SESSION['err'][] = 'その名前はすでに登録済みです';
+    } elseif($sqls->inspection_name()) {
+        $_SESSION['err'][] = 'その名前はすでに登録済みです';
     }
-
+   
     // 削除キーが半角英数で渡ってきたかを検証
     if (!preg_match('/^[a-zA-Z0-9]+$/', $_POST['pass'])) {
-        $_SESSION['err'][] = "半角英数字のみを入力してください";
+        $_SESSION['err'][] = "半角英数字を入力してください";
     } 
 
     // 8校を選んでいるかを検証
     $_SESSION['school'] = filter_input(INPUT_POST, 'school', FILTER_DEFAULT,FILTER_REQUIRE_ARRAY);
     if (!isset($_SESSION['school']) || count($_SESSION['school']) !== 8) {
-        $_SESSION['err'][] = '８校選んで check を入れて下さい';
+        $_SESSION['err'][] = '8校選んでcheckを入れて下さい';
     } elseif($sqls->inspection_8()) {
         $_SESSION['err'][] = 'その8校はすでに登録済みです';
     }
@@ -95,15 +95,17 @@ if(isset($lists[0]['ratio']) && $lists[0]['ratio']) $start = 'start';
     <meta name="keywords" content="野球●場">
     <link rel="stylesheet" href="css/index.css">
     <link rel="icon" href="inyou.ico">
-    <title>baseball</title>
+    <title>野球●場</title>
 </head>
 <body>
 
 <header>
-    <h1>野球●場</h1>
-    <a href="login.php"><i class="fa-solid fa-arrow-up-right-from-square"></i> 管理画面</a>
+    <a href="./"><h1>野球●場</h1></a>
+    <ul>
+        <li><a href="login.php"><i class="fa-solid fa-arrow-up-right-from-square"></i> 管理画面</a></li>
+        <li><a href="rank"><i class="fa-solid fa-arrow-up-right-from-square"></i> 過去成績</a></li>
+    </ul>
 </header>
-
 
 <div class="err_success_div">
     <!-- エラー処理 -->
